@@ -1,1 +1,3 @@
 rootProject.name = 'java-web-dev-templates'
+
+include 'mvc'
