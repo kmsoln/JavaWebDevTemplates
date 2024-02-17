@@ -1,15 +1,16 @@
 package com.project.mvc.config;
 
+import com.project.mvc.services.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-@EnableWebSecurity
-class WebSecurityConfig {
+public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain authorizesRequestsSecurity(HttpSecurity http) throws Exception {
@@ -17,17 +18,34 @@ class WebSecurityConfig {
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers(
                                 "/",
-                                "/home/**"
+                                "/home/**",
+                                "/signup/**",
+                                "/lib/**",
+                                "/src/**",
+                                "/js/**",
+                                "/css/**",
+                                "/error/**"
                         ).permitAll()
-
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
                         .loginPage("/login")
+                        .defaultSuccessUrl("/home/dashboard")
                         .permitAll()
                 )
-                .logout(LogoutConfigurer::permitAll);
+                .logout(LogoutConfigurer::permitAll)
+                .userDetailsService(customUserDetailsService());
 
         return http.build();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public CustomUserDetailsService customUserDetailsService() {
+        return new CustomUserDetailsService(passwordEncoder());
     }
 }

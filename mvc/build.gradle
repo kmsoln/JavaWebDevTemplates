@@ -33,22 +33,13 @@ dependencies {
     implementation "org.thymeleaf.extras:thymeleaf-extras-springsecurity6:$thymeleafVersion"
     implementation "org.thymeleaf:thymeleaf-spring6:$thymeleafVersion"
 
-    //-- Database
-    implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springVersion"
-
-    // Json Serialization
-    def fastXmlVersion = "2.16.1"
-    implementation "com.fasterxml.jackson.core:jackson-databind:$fastXmlVersion"
-
-    // Database Driver
-    def pgsqlVersion = '42.7.1'
-    runtimeOnly "org.postgresql:postgresql:$pgsqlVersion"
+    // Validation
+    def javaxVersion = "2.0.1.Final"
+    implementation "javax.validation:validation-api:$javaxVersion"
 }
 
 tasks.withType(JavaCompile).tap {
     configureEach {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
     }
 }
 

@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <head>
+    <head th:replace="~{shared/_head}">
         <!-- Head -->
-        <th:block th:include="shared/_head"></th:block>
         <title>Main</title>
     </head>
 
     <body>
-        <header>
+        <header th:replace="~{shared/_header}">
             <!-- Header -->
-            <th:block th:include="shared/_navbar"></th:block>
         </header>
 
-        <main role="main" class="container">
+        <main role="main" class="container" th:insert="~{${viewPath}}">
             <!-- Main content -->
-            <!--/*@thymesVar id="viewPath" type="java.lang.String"*/-->
-            <th:block th:replace="${viewPath}"></th:block>
         </main>
 
-        <footer>
-            <!-- Include footer fragment -->
-            <th:block th:include="shared/_footer"></th:block>
+        <footer th:replace="~{shared/_footer}">
+            <!-- Footer -->
         </footer>
 
         <!-- Include common scripts -->
-        <th:block th:include="shared/_scripts"></th:block>
+        <th:block th:insert="~{shared/_scripts}"></th:block>
     </body>
 </html>

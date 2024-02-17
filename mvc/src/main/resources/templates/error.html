@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="bg-light" lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!-- Head -->
+        <th:block th:insert="~{shared/_head}"></th:block>
+        <title>Main</title>
+    </head>
+
+    <body>
+
+        <main>
+            <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+                <div class="text-center">
+                    <h1 class="display-4 text-danger">Error <span th:text="${errorCode}"></span></h1>
+                    <h2 class="text-danger" th:text="${errorMessage}">An error occurred while processing your request.</h2>
+                </div>
+
+                <!-- Development Mode Information -->
+                <div class="alert alert-warning mt-4">
+                    <h3 class="alert-heading">Development Mode</h3>
+                    <p>
+                        Swapping to <strong>Development</strong> environment provides more detailed error information.
+                    </p>
+                    <p class="mb-0">
+                        <strong>Caution:</strong> Enabling Development mode for deployed applications can expose sensitive information.
+                        For local debugging, set <strong>SPRING_PROFILES_ACTIVE</strong> to <strong>development</strong> and restart the app.
+                    </p>
+                </div>
+            </div>
+        </main>
+
+    <!-- Include common scripts -->
+    <th:block th:insert="~{shared/_scripts}"></th:block>
+    </body>
+</html>
