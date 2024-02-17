@@ -16,7 +16,7 @@
                 <li class="nav-item">
                     <a class="nav-link text-dark" th:href="@{/home/index}">Home</a>
                 </li>
-                <li class="nav-item" th:if="${#authorization.expression('isAuthenticated() or hasRole(''ADMIN'')')}">
+                <li class="nav-item" th:if="${#authorization.expression('isAuthenticated() || hasRole(''ADMIN'')')}">
                     <a class="nav-link text-dark" th:href="@{/user/allUsers}">Users</a>
                 </li>
             </ul>
@@ -26,9 +26,6 @@
                 <li class="nav-item" th:if="${#authorization.expression('isAuthenticated()')}">
                     <!-- Display welcome message and profile-related links for authenticated users -->
                     <span class="nav-link text-dark">Welcome, <span th:text="${#authentication.name}"></span></span>
-                </li>
-                <li class="nav-item" th:if="${#authorization.expression('isAuthenticated()')}">
-                    <a class="nav-link text-dark" th:href="@{/account/profile}">Profile</a>
                 </li>
                 <li class="nav-item" th:if="${#authorization.expression('isAuthenticated()')}">
                     <!-- Logout form for authenticated users -->
