@@ -6,10 +6,10 @@ projectName=${@environment.getProperty('student.project')}
     <h1 class="display-4">Welcome to Our Course Project!</h1>
     <p class="lead">Enhance your skills in Java web development with us.</p>
     <div th:if="${studentName == '' || studentGroup == ''}">
-        <p class="lead">Please, go to "Config/ProjectInfo.cs" and complete the required fields.</p>
+        <p class="lead">Please, go to "resources/application.properties" and complete the required fields.</p>
     </div>
     <div th:if="${projectName == 'MyProject'}">
-        <p class="lead">Please, go to "Config/ProjectInfo.cs" and change the project name.</p>
+        <p class="lead">Please, go to "resources/application.properties" and change the project name.</p>
     </div>
     <div th:if="${studentName != '' && studentGroup != '' && projectName != 'MyProject'}">
         <p class="lead">Student Name: <span th:text="${studentName}"></span></p>

@@ -20,14 +20,7 @@ public class SignupModel {
         // default constructor
     }
 
-    public SignupModel(String username, String password, String confirmPassword) {
-        this.username = username;
-        this.password = password;
-        this.confirmPassword = confirmPassword;
-    }
-
     // Getters and setters
-
     public String getUsername() {
         return username;
     }
