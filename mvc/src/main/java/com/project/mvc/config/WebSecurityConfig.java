@@ -20,6 +20,7 @@ public class WebSecurityConfig {
                                 "/",
                                 "/home/index",
                                 "/signup/**",
+                                "/login/**",
                                 "/lib/**",
                                 "/src/**",
                                 "/js/**",
