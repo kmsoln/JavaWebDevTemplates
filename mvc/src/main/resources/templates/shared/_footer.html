@@ -1,0 +1,7 @@
+<footer>
+    <!-- Copyright notice and project information -->
+    <span th:text="${#dates.year(#dates.createNow())}"></span> -
+    <span th:text="${@environment.getProperty('student.project')}"></span> |
+    <span th:text="${@environment.getProperty('student.name')}"></span> (
+    <span th:text="${@environment.getProperty('student.group')}"></span> )
+</footer>
