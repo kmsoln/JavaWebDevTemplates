@@ -1,5 +1,6 @@
 package com.project.mvc.config;
 
+import com.project.mvc.repositories.UserDetailsRepository;
 import com.project.mvc.services.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -41,12 +42,13 @@ public class WebSecurityConfig {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+    public PasswordEncoder passwordEncoder() { return new BCryptPasswordEncoder(); }
+
+    @Bean
+    public UserDetailsRepository userDetailsRepository() { return new UserDetailsRepository(); }
 
     @Bean
     public CustomUserDetailsService customUserDetailsService() {
-        return new CustomUserDetailsService(passwordEncoder());
+        return new CustomUserDetailsService(userDetailsRepository() ,passwordEncoder());
     }
 }
