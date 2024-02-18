@@ -4,35 +4,78 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4eec6ee0-ce58-417e-b677-2bb63beb957c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    <list default="true" id="4eec6ee0-ce58-417e-b677-2bb63beb957c" name="Changes" comment="Enhanced and added few methods to CustomUserDetails">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="java-web-dev-templates" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Class" />
+        <option value="HTML File" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;kmsoln&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="fbf57775-44fe-4625-855f-40a7e2d30e12" />
+        <option name="url" value="https://github.com/kmsoln/JavaWebDevTemplates.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2cSClKxYDPNvaJsedD2VGszFkwP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -41,11 +84,22 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Gradle.Build java-web-dev-templates.executor": "Run",
+    "Gradle.java-web-dev-templates [build].executor": "Run",
+    "Gradle.java-web-dev-templates [clean].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.MySpringBootApplication (1).executor": "Run",
+    "Spring Boot.MySpringBootApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-21",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "K:/projects/kotlin/java-web-dev-templates/mvc/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,6 +108,78 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="K:\projects\kotlin\java-web-dev-templates\mvc\src\main\resources" />
+      <recent name="K:\projects\kotlin\java-web-dev-templates\mvc\src\main\resources\templates" />
+      <recent name="K:\projects\kotlin\java-web-dev-templates\mvc" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle clean" />
+      <command value="gradle build" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MySpringBootApplication (1)">
+    <configuration name="java-web-dev-templates [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="java-web-dev-templates [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="MySpringBootApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="java-web-dev-templates.mvc.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.mvc.MySpringBootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.java-web-dev-templates [build]" />
+        <item itemvalue="Gradle.java-web-dev-templates [clean]" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -69,11 +195,324 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708095744971</updated>
-      <workItem from="1708095746027" duration="320000" />
+      <workItem from="1708095746027" duration="37714000" />
+      <workItem from="1708254396473" duration="19661000" />
     </task>
+    <task id="LOCAL-00001" summary="Created gradle solution">
+      <option name="closed" value="true" />
+      <created>1708098800772</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708098800772</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Defined Java in plugins">
+      <option name="closed" value="true" />
+      <created>1708098849906</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708098849906</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added settings.gradle">
+      <option name="closed" value="true" />
+      <created>1708098923634</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708098923634</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Created new subproject and added included in inside settings.gradle">
+      <option name="closed" value="true" />
+      <created>1708099025927</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708099025927</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Created build.gradle for the subproject &quot;MVC&quot; and added all needed dependencies.">
+      <option name="closed" value="true" />
+      <created>1708099131619</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708099131619</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added all missed files for spring project.">
+      <option name="closed" value="true" />
+      <created>1708099269594</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708099269594</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Created the main class, with changing of the package and group name to project.mvc">
+      <option name="closed" value="true" />
+      <created>1708099382800</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708099382800</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added bootstrap library to the project.">
+      <option name="closed" value="true" />
+      <created>1708099460940</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708099460940</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Created MvcConfig class to assign views to paths.">
+      <option name="closed" value="true" />
+      <created>1708135559115</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708135559115</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added all needed paths">
+      <option name="closed" value="true" />
+      <created>1708135641810</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708135641810</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added xml documentation for the class to explain it for students.">
+      <option name="closed" value="true" />
+      <created>1708135679032</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708135679032</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Created the modified login form">
+      <option name="closed" value="true" />
+      <created>1708135722417</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1708135722417</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Created home view">
+      <option name="closed" value="true" />
+      <created>1708135776466</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1708135776466</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added needed authorities configuration">
+      <option name="closed" value="true" />
+      <created>1708135839456</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1708135839456</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Created default layout for pages.">
+      <option name="closed" value="true" />
+      <created>1708136303951</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1708136303951</updated>
+    </task>
+    <task id="LOCAL-00016" summary="MEGA COMMIT">
+      <option name="closed" value="true" />
+      <created>1708159140439</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1708159140439</updated>
+    </task>
+    <task id="LOCAL-00017" summary="last touches on views">
+      <option name="closed" value="true" />
+      <created>1708159484792</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1708159484792</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fix bugs">
+      <option name="closed" value="true" />
+      <created>1708165102136</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1708165102136</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix bugs">
+      <option name="closed" value="true" />
+      <created>1708166525652</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1708166525652</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Cleared SignupModel">
+      <option name="closed" value="true" />
+      <created>1708258783110</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1708258783110</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fixed bug in gradle of subproject MVC">
+      <option name="closed" value="true" />
+      <created>1708258808681</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1708258808681</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Moved from just Service to repository-service pattern with in-memory storage not database.">
+      <option name="closed" value="true" />
+      <created>1708258846271</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1708258846271</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Updated the logic of AccountController to follow the new update of the project.">
+      <option name="closed" value="true" />
+      <created>1708258882816</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1708258882816</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Added bean for UserDetailsRepository">
+      <option name="closed" value="true" />
+      <created>1708258901841</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1708258901841</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Enhanced folder structure">
+      <option name="closed" value="true" />
+      <created>1708265270593</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1708265270593</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Fixed imports in AccountController">
+      <option name="closed" value="true" />
+      <created>1708265294535</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1708265294535</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Fixed bugs in service and repository">
+      <option name="closed" value="true" />
+      <created>1708265343719</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1708265343719</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Fixed small bug in AccountController">
+      <option name="closed" value="true" />
+      <created>1708269403061</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1708269403061</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Added error message while user signing up.">
+      <option name="closed" value="true" />
+      <created>1708269642521</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1708269642521</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Changed HomeController to redirect authenticated user to dashboard instead of showing the home page for non-authenticated user.">
+      <option name="closed" value="true" />
+      <created>1708291743326</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1708291743326</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Added Error handlers and fixed small bug in paths.">
+      <option name="closed" value="true" />
+      <created>1708291784608</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1708291784608</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Created view for Modify user.">
+      <option name="closed" value="true" />
+      <created>1708291809151</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1708291809151</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Implemented the logic of modify user page.">
+      <option name="closed" value="true" />
+      <created>1708291829150</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1708291829150</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Enhanced and added few methods to CustomUserDetails">
+      <option name="closed" value="true" />
+      <created>1708291853489</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1708291853489</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created MvcConfig class to assign views to paths." />
+    <MESSAGE value="Added all needed paths" />
+    <MESSAGE value="Added xml documentation for the class to explain it for students." />
+    <MESSAGE value="Created the modified login form" />
+    <MESSAGE value="Created home view" />
+    <MESSAGE value="Added needed authorities configuration" />
+    <MESSAGE value="Created default layout for pages." />
+    <MESSAGE value="MEGA COMMIT" />
+    <MESSAGE value="last touches on views" />
+    <MESSAGE value="fix bugs" />
+    <MESSAGE value="Cleared SignupModel" />
+    <MESSAGE value="fixed bug in gradle of subproject MVC" />
+    <MESSAGE value="Moved from just Service to repository-service pattern with in-memory storage not database." />
+    <MESSAGE value="Updated the logic of AccountController to follow the new update of the project." />
+    <MESSAGE value="Added bean for UserDetailsRepository" />
+    <MESSAGE value="Enhanced folder structure" />
+    <MESSAGE value="Fixed imports in AccountController" />
+    <MESSAGE value="Fixed bugs in service and repository" />
+    <MESSAGE value="Fixed small bug in AccountController" />
+    <MESSAGE value="Added error message while user signing up." />
+    <MESSAGE value="Changed HomeController to redirect authenticated user to dashboard instead of showing the home page for non-authenticated user." />
+    <MESSAGE value="Added Error handlers and fixed small bug in paths." />
+    <MESSAGE value="Created view for Modify user." />
+    <MESSAGE value="Implemented the logic of modify user page." />
+    <MESSAGE value="Enhanced and added few methods to CustomUserDetails" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enhanced and added few methods to CustomUserDetails" />
   </component>
 </project>
