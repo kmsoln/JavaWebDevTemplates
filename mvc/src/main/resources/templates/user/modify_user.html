@@ -1,0 +1,87 @@
+<div class="container">
+    <!-- Display role not found message -->
+    <div th:if="${param.roleNotFound}" class="alert alert-danger">
+        Role is not exist.
+    </div>
+
+    <!-- Display user not found message -->
+    <div th:if="${param.userNotFound}" class="alert alert-danger">
+        There is error in the user data.
+    </div>
+
+    <!-- Display role adding success message -->
+    <div th:if="${param.roleAddedSuccess}" class="alert alert-success">
+        <p>Role added successful!</p>
+    </div>
+
+    <!-- Display role adding failed message -->
+    <div th:if="${param.roleAddFailed}" class="alert alert-danger">
+        <p>There is error happened while adding the role. possible that you are modify current user account.</p>
+    </div>
+
+    <!-- Display role deleting success message -->
+    <div th:if="${param.roleDeletedSuccess}" class="alert alert-success">
+        <p>Role Deleted successful!</p>
+    </div>
+
+    <!-- Display role deleting failed message -->
+    <div th:if="${param.roleDeleteFailed}" class="alert alert-danger">
+        <p>There is error happened while deleting the role. possible that you are modify current user account.</p>
+    </div>
+
+    <!-- Display role adding success message -->
+    <div th:if="${param.error}" class="alert alert-danger">
+        <p>there is error in the operation.</p>
+    </div>
+
+    <h2>Modify User</h2>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" th:value="${user.username}" readonly>
+    </div>
+
+    <!-- Table of Authorities -->
+    <div class="form-group pt-1">
+        <h2>Authorities</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Authority</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="authority : ${user.authorities}">
+                <td th:text="${authority}"></td>
+                <td>
+                    <a th:href="@{'/user/modify/' + ${user.username} + '/deleteAuthority/' + ${authority}}"  class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Authority Dropdown -->
+    <div class="form-group">
+        <label for="addAuthority">Add Authority</label>
+        <div>
+            <select class="form-control" id="addAuthority" name="addAuthority">
+                <option selected disabled>Select Role</option>
+                <option th:each="role : ${roles}" th:value="${role}" th:text="${role}"></option>
+            </select>
+            <div>
+                <a th:href="@{'/user/modify/' + ${user.username} + '/addAuthority/' + ${selectedRole}}" class="btn btn-success" id="addRoleBtn">Add Role</a>
+            </div>
+        </div>
+
+        <script th:inline="javascript">
+            document.getElementById('addAuthority').addEventListener('change', function() {
+                var selectedRole = this.value;
+                var username =  document.getElementById('username').value
+                document.getElementById('addRoleBtn').href = '/user/modify/' + username + '/addAuthority/' + selectedRole;
+            });
+        </script>
+    </div>
+
+
+</div>
