@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4eec6ee0-ce58-417e-b677-2bb63beb957c" name="Changes" comment="Enhanced and added few methods to CustomUserDetails">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="4eec6ee0-ce58-417e-b677-2bb63beb957c" name="Changes" comment="Removed my name from application.properties">
+      <change afterPath="$PROJECT_DIR$/mvc/src/main/java/com/project/mvc/controllers/CustomErrorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/src/main/java/com/project/mvc/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/src/main/java/com/project/mvc/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +49,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
-        <option value="Class" />
         <option value="HTML File" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -113,6 +115,9 @@
       <recent name="K:\projects\kotlin\java-web-dev-templates\mvc\src\main\resources" />
       <recent name="K:\projects\kotlin\java-web-dev-templates\mvc\src\main\resources\templates" />
       <recent name="K:\projects\kotlin\java-web-dev-templates\mvc" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.project.mvc.controllers" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -196,7 +201,7 @@
       <option name="presentableId" value="Default" />
       <updated>1708095744971</updated>
       <workItem from="1708095746027" duration="37714000" />
-      <workItem from="1708254396473" duration="19661000" />
+      <workItem from="1708254396473" duration="21148000" />
     </task>
     <task id="LOCAL-00001" summary="Created gradle solution">
       <option name="closed" value="true" />
@@ -470,7 +475,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708291853489</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Removed my name from application.properties">
+      <option name="closed" value="true" />
+      <created>1708292049884</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1708292049884</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +501,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created MvcConfig class to assign views to paths." />
     <MESSAGE value="Added all needed paths" />
     <MESSAGE value="Added xml documentation for the class to explain it for students." />
     <MESSAGE value="Created the modified login form" />
@@ -513,6 +525,7 @@
     <MESSAGE value="Created view for Modify user." />
     <MESSAGE value="Implemented the logic of modify user page." />
     <MESSAGE value="Enhanced and added few methods to CustomUserDetails" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enhanced and added few methods to CustomUserDetails" />
+    <MESSAGE value="Removed my name from application.properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed my name from application.properties" />
   </component>
 </project>
