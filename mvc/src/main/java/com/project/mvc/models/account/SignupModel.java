@@ -1,4 +1,4 @@
-package com.project.mvc.models;
+package com.project.mvc.models.account;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
