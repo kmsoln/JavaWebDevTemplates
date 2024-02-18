@@ -27,52 +27,25 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-    //  in-memory repository to store user data ( no any database. just simulation for repository )
     private final UserDetailsRepository repo;
-
-    // Password encoder for secure password storage
     private final PasswordEncoder passwordEncoder;
 
-    public CustomUserDetailsService(UserDetailsRepository repo, PasswordEncoder passwordEncoder) {
-        this.repo = repo;
+    public CustomUserDetailsService(UserDetailsRepository userDetailsRepository, PasswordEncoder passwordEncoder) {
+        this.repo = userDetailsRepository;
         this.passwordEncoder = passwordEncoder;
 
         // Populate some dummy users with encoded passwords
-        // Admin Account
-        Set<GrantedAuthority> authorities = new HashSet<>();
-        authorities.add(new SimpleGrantedAuthority("USER"));
-
-        // Save dummy user "user" to the repository
-        this.repo.save(new User(
-                "user",
-                this.passwordEncoder.encode("user"),
-                authorities)
-        );
-
-        // User Account
-        authorities.clear();
-        authorities.add(new SimpleGrantedAuthority("ADMIN"));
-
-        // Save dummy user "admin" to the repository
-        this.repo.save(new User(
-                "admin",
-                this.passwordEncoder.encode("admin"),
-                authorities)
-        );
+        populateDummyUsers();
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        // Check if user exists by username
-        boolean isExists = this.userExists(username);
-
-        // If user is not found, throw exception
-        if (!isExists) {
+        UserDetails user = repo.loadUserByUsername(username);
+        if (user == null) {
             throw new UsernameNotFoundException("User not found with username: " + username);
         }
 
-        // Build and return a UserDetails object
-        return repo.loadUserByUsername(username);
+        return user;
     }
 
     public void createUser(User user) {
@@ -114,15 +87,39 @@ public class CustomUserDetailsService implements UserDetailsService {
         repo.deleteByUsername(username);
     }
 
-    public boolean userExists(String username) {
-        return repo.existsByUsername(username);
+    public Collection<User> getAllUsers() {
+        return repo.findAll();
+    }
+
+    public void addToUserAuthorities(UserDetails user, String authority) {
+        Set<GrantedAuthority> authorities = new HashSet<>(user.getAuthorities());
+        authorities.add(new SimpleGrantedAuthority(authority));
+        User updatedUser = new User(user.getUsername(), user.getPassword(), authorities);
+        updateUser(updatedUser);
+    }
+
+    public void deleteFromUserAuthorities(UserDetails user, String authority) {
+        Set<GrantedAuthority> authorities = new HashSet<>(user.getAuthorities());
+        authorities.removeIf(auth -> auth.getAuthority().equals(authority));
+        User updatedUser = new User(user.getUsername(), user.getPassword(), authorities);
+        updateUser(updatedUser);
     }
 
     public boolean userExists(User user) {
         return this.userExists(user.getUsername());
     }
 
-    public Collection<User> getAllUsers(){
-        return repo.findAll();
+    public boolean userExists(String username) {
+        return repo.existsByUsername(username);
+    }
+
+    private void populateDummyUsers() {
+        Set<GrantedAuthority> userAuthorities = new HashSet<>();
+        userAuthorities.add(new SimpleGrantedAuthority("USER"));
+        createUser(new User("user", "user", userAuthorities));
+
+        Set<GrantedAuthority> adminAuthorities = new HashSet<>();
+        adminAuthorities.add(new SimpleGrantedAuthority("ADMIN"));
+        createUser(new User("admin", "admin", adminAuthorities));
     }
 }
