@@ -27,12 +27,14 @@ public class AccountController {
 
     @GetMapping("/login")
     public String loginView(Model model){
+        model.addAttribute("title", "Login");
         model.addAttribute("viewPath", "account/login");
         return "shared/_layout";
     }
 
     @GetMapping("/signup")
     public String signupView(Model model){
+        model.addAttribute("title", "Signup");
         model.addAttribute("model", new SignupModel());
         model.addAttribute("viewPath", "account/signup");
         return "shared/_layout";
