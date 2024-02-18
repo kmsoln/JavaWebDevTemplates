@@ -33,12 +33,14 @@ public class UserDetailsRepository {
     public void save(User user) {
         String username = user.getUsername();
 
-        // Check if the user already exists
-        if (users.containsKey(username)) {
-            throw new IllegalArgumentException("User with username " +  username + " already exists.");
-        }
-
         // Save the user to the in-memory repository
         users.put(username, user);
+    }
+
+    public void deleteByUsername(String username) {
+        // Check if the user not exists
+        if (!users.containsKey(username)) throw new IllegalArgumentException("User with username " +  username + " is not exists.");
+
+        users.remove(username);
     }
 }
