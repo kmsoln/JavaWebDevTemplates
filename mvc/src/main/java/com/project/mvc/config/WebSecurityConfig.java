@@ -28,6 +28,8 @@ public class WebSecurityConfig {
                                 "/css/**",
                                 "/error/**"
                         ).permitAll()
+
+                        .requestMatchers("/user/**").hasAuthority("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
