@@ -1,4 +1,9 @@
 <div class="col-md-6 offset-md-3">
+    <!-- Display error message for user that is already exists-->
+    <div th:if="${param.userExists}" class="alert alert-danger">
+        Username already used, try another one.
+    </div>
+
     <h1 class="text-center" th:text="${title}"></h1>
     <p class="text-center">Fill out the following form to create a new account.</p>
 

@@ -48,7 +48,7 @@ public class AccountController {
         if (service.userExists(model.getUsername())) {
             pageModel.addAttribute("viewPath", "account/signup");
             pageModel.addAttribute("error", "Username already exists. Please choose a different username.");
-            return "account/signup";
+            return "redirect:/signup?userExists";
         }
 
         // Set default role(s) for new users
