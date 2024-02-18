@@ -1,6 +1,8 @@
 package com.project.mvc.services;
 
 import java.util.*;
+
+import com.project.mvc.repositories.UserDetailsRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -19,78 +21,75 @@ import org.springframework.stereotype.Service;
  * In a real-world application, you should replace the in-memory storage with a database
  * and adapt the implementation to use JPA for interacting with user data.
  * <p>
- * This class includes methods to load user details, check if a user exists, and save a new user.
- * <p>
  * Note: This class is designed for educational purposes, and students should adapt it for use
  * with JPA and a database in a production environment.
- *
  */
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-    // In-memory storage for user details (replace with database/JPA in a real application)
-    private final Map<String, User> users = new HashMap<>();
+    //  in-memory repository to store user data ( no any database. just simulation for repository )
+    private final UserDetailsRepository repo;
 
     // Password encoder for secure password storage
     private final PasswordEncoder passwordEncoder;
 
-    // Constructor with PasswordEncoder injection
-    public CustomUserDetailsService(PasswordEncoder passwordEncoder) {
+    public CustomUserDetailsService(UserDetailsRepository repo, PasswordEncoder passwordEncoder) {
+        this.repo = repo;
         this.passwordEncoder = passwordEncoder;
 
         // Populate some dummy users with encoded passwords
+        // Admin Account
         Set<GrantedAuthority> authorities = new HashSet<>();
         authorities.add(new SimpleGrantedAuthority("USER"));
-        users.put("user", new User("user", passwordEncoder.encode("user"), authorities));
 
+        // Save dummy user "user" to the repository
+        this.repo.save(new User(
+                "user",
+                this.passwordEncoder.encode("user"),
+                authorities)
+        );
+
+        // User Account
+        authorities.clear();
         authorities.add(new SimpleGrantedAuthority("ADMIN"));
-        users.put("admin", new User("admin", passwordEncoder.encode("admin"), authorities));
+
+        // Save dummy user "admin" to the repository
+        this.repo.save(new User(
+                "admin",
+                this.passwordEncoder.encode("admin"),
+                authorities)
+        );
     }
 
-    // Load user details by username during authentication
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = users.get(username);
+        // Load user from the repository by username
+        User user = repo.loadUserByUsername(username);
+
+        // If user is not found, throw exception
         if (user == null) {
             throw new UsernameNotFoundException("User not found with username: " + username);
         }
 
         // Build and return a UserDetails object
-        return org.springframework.security.core.userdetails.User
-                .withUsername(user.getUsername())
-                .password(user.getPassword())
-                .authorities(user.getAuthorities())
-                .build();
+        return user;
     }
 
-    // Save a new user with the provided username, password, and roles
-    public void save(String username, String password, String... roles) {
-        // Check if the user already exists
-        if (users.containsKey(username)) {
-            throw new IllegalArgumentException("User with username " + username + " already exists.");
-        }
+    public void createUser(User user) {
+        String username = user.getUsername();
+        String hashedPassword = passwordEncoder.encode(user.getPassword());
+        Collection<GrantedAuthority> authorities = user.getAuthorities();
 
-        // Create authorities from provided roles
-        Set<GrantedAuthority> authorities = new HashSet<>();
-        for (String role : roles) {
-            authorities.add(new SimpleGrantedAuthority(role));
-        }
-
-        // Encode the password before saving
-        String encodedPassword = passwordEncoder.encode(password);
-
-        // Create a new User and save it
-        User user = new User(username, encodedPassword, authorities);
-        users.put(username, user);
+        // Create a new User object with hashed password and save to repository
+        User finalUser = new User(username, hashedPassword, authorities);
+        repo.save(finalUser);
     }
 
-    // Check if a user with the given username already exists
     public boolean userExists(String username) {
-        return users.containsKey(username);
+        return repo.existsByUsername(username);
     }
 
-    // Retrieves all users stored in memory.
-    public Collection<User> getAllUsers() {
-        return users.values();
+    public Collection<User> getAllUsers(){
+        return repo.findAll();
     }
 }
