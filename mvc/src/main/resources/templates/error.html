@@ -12,7 +12,8 @@
             <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
                 <div class="text-center">
                     <h1 class="display-4 text-danger">Error <span th:text="${errorCode}"></span></h1>
-                    <h2 class="text-danger" th:text="${errorMessage}">An error occurred while processing your request.</h2>
+                    <h2 class="text-danger" th:text="${error}">Unknown</h2>
+                    <h3 class="text-danger" th:text="${errorMessage}">An error occurred while processing your request.</h3>
                 </div>
 
                 <!-- Development Mode Information -->
