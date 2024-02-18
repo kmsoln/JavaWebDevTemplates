@@ -44,11 +44,6 @@ dependencies {
     implementation "javax.validation:validation-api:$javaxVersion"
 }
 
-tasks.withType(JavaCompile).tap {
-    configureEach {
-    }
-}
-
 test {
     useJUnitPlatform()
 }
