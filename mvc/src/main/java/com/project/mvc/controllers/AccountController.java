@@ -3,13 +3,17 @@ package com.project.mvc.controllers;
 import com.project.mvc.models.SignupModel;
 import com.project.mvc.services.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import javax.validation.Valid;
+import java.util.HashSet;
+import java.util.Set;
 
 @Controller
 public class AccountController {
@@ -46,10 +50,17 @@ public class AccountController {
         }
 
         // Set default role(s) for new users
-        String[] authorities = {"USER"};
+        String[] roles = {"USER"};
+
+        Set<GrantedAuthority> authorities = new HashSet<>();
+        for (String role : roles) {
+            authorities.add(new SimpleGrantedAuthority(role));
+        }
+
+        User user = new User(model.getUsername(), model.getPassword(), authorities);
 
         // Save the new user using the CustomUserDetailsService
-        service.save(model.getUsername(), model.getPassword(), authorities);
+        service.createUser(user);
 
         // Redirect to the login page or any other page as needed
         return "redirect:/login?registrationSuccess";
