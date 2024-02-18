@@ -1,6 +1,6 @@
 package com.project.mvc.controllers;
 
-import com.project.mvc.models.SignupModel;
+import com.project.mvc.models.account.SignupModel;
 import com.project.mvc.services.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
