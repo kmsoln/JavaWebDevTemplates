@@ -18,17 +18,11 @@ public class UserDetailsRepository {
     // In-memory storage for user details (replace with database/JPA in a real application)
     private static final Map<String, User> users = new HashMap<>();
 
-    public User loadUserByUsername(String username) throws UsernameNotFoundException {
-        return users.get(username);
-    }
+    public User loadUserByUsername(String username) throws UsernameNotFoundException { return users.get(username); }
 
-    public boolean existsByUsername(String username) {
-        return users.containsKey(username);
-    }
+    public boolean existsByUsername(String username) { return users.containsKey(username); }
 
-    public Collection<User> findAll() {
-        return users.values();
-    }
+    public Collection<User> findAll() { return users.values(); }
 
     public void save(User user) {
         String username = user.getUsername();

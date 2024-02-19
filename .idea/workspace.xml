@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4eec6ee0-ce58-417e-b677-2bb63beb957c" name="Changes" comment="Removed my name from application.properties">
-      <change afterPath="$PROJECT_DIR$/mvc/src/main/java/com/project/mvc/controllers/CustomErrorController.java" afterDir="false" />
+    <list default="true" id="4eec6ee0-ce58-417e-b677-2bb63beb957c" name="Changes" comment="Admin only access for specific paths.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/src/main/java/com/project/mvc/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/src/main/java/com/project/mvc/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +198,7 @@
       <option name="presentableId" value="Default" />
       <updated>1708095744971</updated>
       <workItem from="1708095746027" duration="37714000" />
-      <workItem from="1708254396473" duration="21148000" />
+      <workItem from="1708254396473" duration="22732000" />
     </task>
     <task id="LOCAL-00001" summary="Created gradle solution">
       <option name="closed" value="true" />
@@ -483,7 +480,31 @@
       <option name="project" value="LOCAL" />
       <updated>1708292049884</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Added Custom Error Controller that overrides the default one.">
+      <option name="closed" value="true" />
+      <created>1708294159562</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1708294159562</updated>
+    </task>
+    <task id="LOCAL-00037" summary="updated error.html">
+      <option name="closed" value="true" />
+      <created>1708294179548</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1708294179548</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Admin only access for specific paths.">
+      <option name="closed" value="true" />
+      <created>1708294209624</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1708294209624</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,9 +522,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added all needed paths" />
-    <MESSAGE value="Added xml documentation for the class to explain it for students." />
-    <MESSAGE value="Created the modified login form" />
     <MESSAGE value="Created home view" />
     <MESSAGE value="Added needed authorities configuration" />
     <MESSAGE value="Created default layout for pages." />
@@ -526,6 +544,9 @@
     <MESSAGE value="Implemented the logic of modify user page." />
     <MESSAGE value="Enhanced and added few methods to CustomUserDetails" />
     <MESSAGE value="Removed my name from application.properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed my name from application.properties" />
+    <MESSAGE value="Added Custom Error Controller that overrides the default one." />
+    <MESSAGE value="updated error.html" />
+    <MESSAGE value="Admin only access for specific paths." />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin only access for specific paths." />
   </component>
 </project>
