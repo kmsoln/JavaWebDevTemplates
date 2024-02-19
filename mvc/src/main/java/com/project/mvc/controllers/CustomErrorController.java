@@ -22,7 +22,7 @@ public class CustomErrorController implements ErrorController {
     @RequestMapping("/error")
     public String handleError(WebRequest request, Model model) {
         // Retrieve error attributes
-        java.util.Map<String, Object> errorAttributesMap = errorAttributes.getErrorAttributes(request, ErrorAttributeOptions.defaults());
+        Map<String, Object> errorAttributesMap = errorAttributes.getErrorAttributes(request, ErrorAttributeOptions.defaults());
 
         // Add error attributes to the model
         model.addAttribute("errorCode", errorAttributesMap.get("status"));
