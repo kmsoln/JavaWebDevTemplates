@@ -1,7 +1,10 @@
 package com.project.mvc.config;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.thymeleaf.templatemode.TemplateMode;
+import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
 /**
  * Configuration class for customizing Spring MVC behavior.
@@ -46,7 +49,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @see ViewControllerRegistry
  */
 @Configuration
-public class MvcConfig implements WebMvcConfigurer {
+public class WebMvcConfig implements WebMvcConfigurer {
     
     public void addViewControllers(ViewControllerRegistry registry) {
         // Home
@@ -57,4 +60,13 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addRedirectViewController("/account/logout","/logout");
     }
 
+    @Bean
+    public ClassLoaderTemplateResolver templateResolver() {
+        ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
+        templateResolver.setPrefix("/templates/");
+        templateResolver.setSuffix(".html");
+        templateResolver.setTemplateMode(TemplateMode.HTML);
+        templateResolver.setCharacterEncoding("UTF-8");
+        return templateResolver;
+    }
 }
