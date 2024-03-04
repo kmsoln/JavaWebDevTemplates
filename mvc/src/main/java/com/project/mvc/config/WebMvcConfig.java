@@ -67,6 +67,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCharacterEncoding("UTF-8");
+
         return templateResolver;
     }
 }

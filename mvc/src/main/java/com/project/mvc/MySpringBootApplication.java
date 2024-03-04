@@ -19,8 +19,9 @@ public class MySpringBootApplication {
     }
 
     private static void logServerInfo(ConfigurableApplicationContext context) {
-        String port = context.getEnvironment().getProperty("server.port");
-        String contextPath = context.getEnvironment().getProperty("server.servlet.context-path");
+        var env = context.getEnvironment();
+        String port = env.getProperty("server.port");
+        String contextPath = env.getProperty("server.servlet.context-path");
 
         log("Server running at: http://localhost:" + port + contextPath);
     }
