@@ -26,8 +26,8 @@ dependencies {
 
     //-- Security
     def springSecurityVersion = "6.2.1"
-    implementation "org.springframework.boot:spring-boot-starter-security:$springVersion"
-    testImplementation "org.springframework.security:spring-security-test:$springSecurityVersion"
+    implementation "org.springframework.boot:spring-boot-starter-security"
+    testImplementation "org.springframework.security:spring-security-test"
 
     //-- MVC
     implementation "org.springframework.boot:spring-boot-starter-web:$springVersion"
