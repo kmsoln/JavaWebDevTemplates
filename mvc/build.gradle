@@ -42,6 +42,11 @@ dependencies {
     // Validation
     def javaxVersion = "2.0.1.Final"
     implementation "javax.validation:validation-api:$javaxVersion"
+
+    // Database
+    implementation "org.postgresql:postgresql"
+    implementation "org.springframework.boot:spring-boot-starter-jdbc"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
 }
 
 test {
