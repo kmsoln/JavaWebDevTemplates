@@ -4,6 +4,7 @@ import com.project.mvc.data.entities.Enrollment;
 import com.project.mvc.data.entities.Student;
 import com.project.mvc.repositories.EnrollmentRepository;
 import com.project.mvc.repositories.StudentRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -49,10 +50,20 @@ public class StudentService {
 
     @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.SERIALIZABLE, readOnly = false)
     public void updateStudentMajor(UUID studentId, String newMajor) {
-        Student student = studentRepository.findById(studentId).orElseThrow(() -> new IllegalArgumentException("Student not found"));
+        // Retrieve student
+        Student student = studentRepository.findById(studentId)
+                .orElseThrow(() -> new EntityNotFoundException("Student with ID " + studentId + " not found"));
+
+        // Check if the new major is not blank
+        if (newMajor == null || newMajor.trim().isEmpty()) {
+            throw new IllegalArgumentException("New major cannot be blank");
+        }
+
+        // Update student's major
         student.setMajor(newMajor);
         studentRepository.save(student);
     }
+
 
     @Transactional(propagation = Propagation.NOT_SUPPORTED, isolation = Isolation.READ_COMMITTED)
     public void deleteStudent(UUID studentId) {

@@ -7,6 +7,7 @@ import com.project.mvc.data.entities.Student;
 import com.project.mvc.repositories.CourseRepository;
 import com.project.mvc.repositories.EnrollmentRepository;
 import com.project.mvc.repositories.StudentRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -57,19 +58,17 @@ public class EnrollmentService {
 
     @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.SERIALIZABLE, readOnly = false)
     public void enrollStudentToCourse(UUID studentId, UUID courseId) {
-        // Retrieve student and course
-        Student student = studentRepository.findById(studentId).orElseThrow(() -> new IllegalArgumentException("Student not found"));
-        Course course = courseRepository.findById(courseId).orElseThrow(() -> new IllegalArgumentException("Course not found"));
+        Student student = getStudentIfExists(studentId);
+        Course course = getCourseIfExists(courseId);
 
-        // Check if course has available capacity
         if (course.getCapacity() > 0) {
-            // Perform enrollment
+            validateStudentEnrollment(studentId, courseId);
+
             Enrollment enrollment = new Enrollment();
             enrollment.setStudent(student);
             enrollment.setCourse(course);
             enrollmentRepository.save(enrollment);
 
-            // Update course capacity
             course.setCapacity(course.getCapacity() - 1);
             courseRepository.save(course);
         } else {
@@ -79,15 +78,45 @@ public class EnrollmentService {
 
     @Transactional(propagation = Propagation.MANDATORY)
     public void removeStudentEnrollmentFromCourse(UUID studentId, UUID courseId) {
-        // Retrieve all enrollments for the specified student
-        List<Enrollment> studentEnrollments = enrollmentRepository.findByStudentId(studentId);
+        Student student = getStudentIfExists(studentId);
+        Course course = getCourseIfExists(courseId);
 
-        // Filter enrollments for the specified course
-        List<Enrollment> courseEnrollments = studentEnrollments.stream()
+        List<Enrollment> studentEnrollments = enrollmentRepository.findByStudentId(studentId);
+        validateStudentEnrollmentForCourse(studentId, courseId, studentEnrollments);
+
+        List<Enrollment> courseEnrollments = filterEnrollmentsForCourse(courseId, studentEnrollments);
+        enrollmentRepository.deleteAll(courseEnrollments);
+    }
+
+    private Student getStudentIfExists(UUID studentId) {
+        return studentRepository.findById(studentId)
+                .orElseThrow(() -> new EntityNotFoundException("Student with ID " + studentId + " not found"));
+    }
+
+    private Course getCourseIfExists(UUID courseId) {
+        return courseRepository.findById(courseId)
+                .orElseThrow(() -> new EntityNotFoundException("Course with ID " + courseId + " not found"));
+    }
+
+    private void validateStudentEnrollment(UUID studentId, UUID courseId) {
+        if (enrollmentRepository.existsByStudentIdAndCourseId(studentId, courseId)) {
+            throw new IllegalStateException("Student is already enrolled in the course");
+        }
+    }
+
+    private void validateStudentEnrollmentForCourse(UUID studentId, UUID courseId, List<Enrollment> studentEnrollments) {
+        if (studentEnrollments.isEmpty()) {
+            throw new IllegalStateException("No enrollments found for student with ID " + studentId);
+        }
+
+        if (filterEnrollmentsForCourse(courseId, studentEnrollments).isEmpty()) {
+            throw new IllegalStateException("Student with ID " + studentId + " is not enrolled in course with ID " + courseId);
+        }
+    }
+
+    private List<Enrollment> filterEnrollmentsForCourse(UUID courseId, List<Enrollment> studentEnrollments) {
+        return studentEnrollments.stream()
                 .filter(enrollment -> enrollment.getCourse().getId().equals(courseId))
                 .collect(Collectors.toList());
-
-        // Delete the filtered enrollments
-        enrollmentRepository.deleteAll(courseEnrollments);
     }
 }

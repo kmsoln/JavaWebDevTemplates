@@ -19,35 +19,13 @@ public interface EnrollmentRepository extends JpaRepository<Enrollment, UUID> {
     List<Enrollment> findByStudentId(UUID studentId);
 
     @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, readOnly = true)
-    List<Enrollment> findByCourseId(UUID courseId);
-
-    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, readOnly = true)
-    List<Enrollment> findByEnrollmentDate(Date enrollmentDate);
-
-    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, readOnly = true)
-    List<Enrollment> findByGrade(int grade);
-
-    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, readOnly = true)
     Page<Enrollment> findByStudentId(UUID studentId, Pageable pageable);
+
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, readOnly = true)
+    List<Enrollment> findByCourseId(UUID courseId);
 
     @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, readOnly = true)
     Page<Enrollment> findByCourseId(UUID courseId, Pageable pageable);
 
-    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, readOnly = true)
-    Page<Enrollment> findByEnrollmentDate(Date enrollmentDate, Pageable pageable);
 
-    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, readOnly = true)
-    Page<Enrollment> findByGrade(int grade, Pageable pageable);
-
-    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, readOnly = true)
-    List<Enrollment> findByStudentId(UUID studentId, Sort sort);
-
-    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, readOnly = true)
-    List<Enrollment> findByCourseId(UUID courseId, Sort sort);
-
-    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, readOnly = true)
-    List<Enrollment> findByEnrollmentDate(Date enrollmentDate, Sort sort);
-
-    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, readOnly = true)
-    List<Enrollment> findByGrade(int grade, Sort sort);
 }
