@@ -1,0 +1,17 @@
+### Enroll a student in a course
+POST http://localhost:8080/api/university/enroll?studentId=<studentId>&courseId=<courseId>
+
+### Remove a student's enrollment from a course
+DELETE http://localhost:8080/api/university/enrollments?studentId=<studentId>&courseId=<courseId>
+
+### Retrieve all students for a specific course
+GET http://localhost:8080/api/university/students?courseId=<courseId>
+
+### Add a new course
+POST http://localhost:8080/api/university/courses?title=<courseTitle>
+
+### Update course and enrollments
+PUT http://localhost:8080/api/university/courses?courseId=<courseId>&newTitle=<newTitle>
+
+### Perform non-transactional operation
+POST http://localhost:8080/api/university/non-transactional-operation
