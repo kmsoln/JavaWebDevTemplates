@@ -1,3 +1,5 @@
+English | [中文](README-CN.md) | [Русский](README.md)
+
 # Spring Projects Template
 
 This repository contains two Spring projects designed to serve as templates for building your own projects using best practices. Each project utilizes various technologies and libraries to provide a robust foundation for your development needs.
