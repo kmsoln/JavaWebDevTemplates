@@ -1,0 +1,75 @@
+<div class="col-md-6 offset-md-3">
+    <!-- Display error message for user that is already exists-->
+    <div th:if="${param.userExists}" class="alert alert-danger">
+        Username already used, try another one.
+    </div>
+
+    <h1 class="text-center" th:text="${title}"></h1>
+    <p class="text-center">Fill out the following form to create a new account.</p>
+
+    <form method="post" th:action="@{/signup}">
+
+        <!-- Username input -->
+        <div class="form-group mb-3">
+            <p th:errors="*{model.username}"></p>
+            <label for="Username">Username</label>
+            <input type="text" id="Username" name="username" class="form-control mt-1" th:field="*{model.username}" />
+        </div>
+
+        <!-- Password input -->
+        <div class="form-group mb-3">
+            <p th:errors="*{model.password}"></p>
+            <label for="Password">Password</label>
+            <input type="password" id="Password" name="password" class="form-control mt-1" th:field="*{model.password}" />
+        </div>
+
+        <!-- Confirm Password input -->
+        <div class="form-group mb-3">
+            <label for="ConfirmPassword">Confirm Password</label>
+            <input type="password" id="ConfirmPassword" name="confirmPassword" class="form-control mt-1" th:field="*{model.confirmPassword}" />
+        </div>
+
+        <!-- Email input -->
+        <div class="form-group mb-3">
+            <label for="Email">Email</label>
+            <input type="email" id="Email" name="email" class="form-control mt-1" />
+        </div>
+
+        <!-- Date input -->
+        <div class="form-group mb-3">
+            <label for="DateOfBirth">Date of Birth</label>
+            <input type="date" id="DateOfBirth" name="dateOfBirth" class="form-control mt-1" />
+        </div>
+
+        <!-- Number input -->
+        <div class="form-group mb-3">
+            <label for="Age">Age</label>
+            <input type="number" id="Age" name="age" class="form-control mt-1" />
+        </div>
+
+        <!-- Radio buttons input -->
+        <div class="form-group mb-3">
+            <label>Gender</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="Male" name="gender" value="male" />
+                <label class="form-check-label" for="Male">Male</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="Female" name="gender" value="female" />
+                <label class="form-check-label" for="Female">Female</label>
+            </div>
+        </div>
+
+        <!-- Checkbox input -->
+        <div class="form-group mb-3">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Terms" name="terms" />
+                <label class="form-check-label" for="Terms">I agree to the terms and conditions</label>
+            </div>
+        </div>
+
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary mt-3 mb-3">Register</button>
+    </form>
+</div>
