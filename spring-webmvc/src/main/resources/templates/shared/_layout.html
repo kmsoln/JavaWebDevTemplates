@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{shared/_head}">
+        <!-- Head -->
+        <title>Main</title>
+    </head>
+
+    <body>
+        <header th:replace="~{shared/_header}">
+            <!-- Header -->
+        </header>
+
+        <main role="main" class="container" th:insert="~{${viewPath}}">
+            <!-- Main content -->
+        </main>
+
+        <footer th:replace="~{shared/_footer}">
+            <!-- Footer -->
+        </footer>
+
+        <!-- Include common scripts -->
+        <th:block th:insert="~{shared/_scripts}"></th:block>
+    </body>
+</html>
